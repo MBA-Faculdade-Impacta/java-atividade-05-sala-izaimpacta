@@ -1,6 +1,7 @@
 package br.com.impacta.lab;
 
 import br.com.impacta.models.*;
+import java.util.ArrayList;
 
 public class JavaSpringTemplateApplication {
 
@@ -36,14 +37,47 @@ public class JavaSpringTemplateApplication {
 		 * 
 		 */
 		
+    ArrayList<Produto> listaDeProdutos= new ArrayList();
+
+      
 		Produto produto = new Produto();
 		produto.codigo = 1;
 		produto.descricao = "Camisa";
 		produto.valor = 70.00;
+
+    listaDeProdutos.add(produto);
 		
-		String resumo = produto.montarResumo(produto);
+
+    Produto shorts = new Produto();
+		shorts.codigo = 2;
+		shorts.descricao = "Shorts";
+		shorts.valor = 57.50;
 		
-		System.out.println(resumo);
+    listaDeProdutos.add(shorts);
+
+    Produto meia = new Produto();
+		meia.codigo = 3;
+		meia.descricao = "Meia";
+		meia.valor = 9.99;
+		
+    listaDeProdutos.add(meia);
+
+    Produto toca = new Produto();
+		toca.codigo = 4;
+		toca.descricao = "Toca";
+		toca.valor = 35.00;
+		
+    listaDeProdutos.add(toca);
+
+    Produto luvas = new Produto();
+		luvas.codigo = 5;
+		luvas.descricao = "Luvas";
+		luvas.valor = 19.50;
+		
+    listaDeProdutos.add(toca);
+
+   Produto produtoEncontrado = Produto.buscarProdutoPeloId(listaDeProdutos, 2);
+	  System.out.println(produtoEncontrado.descricao);
 	}
 
 }

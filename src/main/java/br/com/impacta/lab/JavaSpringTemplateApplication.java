@@ -36,48 +36,50 @@ public class JavaSpringTemplateApplication {
 		 * 
 		 * 
 		 */
-		
-    ArrayList<Produto> listaDeProdutos= new ArrayList();
 
-      
 		Produto produto = new Produto();
 		produto.codigo = 1;
 		produto.descricao = "Camisa";
 		produto.valor = 70.00;
 
-    listaDeProdutos.add(produto);
-		
+		String resumo = produto.montarResumo(produto);
+
+		System.out.println(resumo);
+    ArrayList<Produto> listaProduto = new ArrayList();
+
+    Produto camisa = new Produto();
+    camisa.criarCodigo(1);
+    //camisa.codigo = 1;
+    camisa.descricao = "Camisa";
+    camisa.valor = 70.00;
+    listaProduto.add(camisa);
 
     Produto shorts = new Produto();
-		shorts.codigo = 2;
-		shorts.descricao = "Shorts";
-		shorts.valor = 57.50;
-		
-    listaDeProdutos.add(shorts);
-
-    Produto meia = new Produto();
-		meia.codigo = 3;
-		meia.descricao = "Meia";
-		meia.valor = 9.99;
-		
-    listaDeProdutos.add(meia);
-
-    Produto toca = new Produto();
-		toca.codigo = 4;
-		toca.descricao = "Toca";
-		toca.valor = 35.00;
-		
-    listaDeProdutos.add(toca);
+    shorts.criarCodigo(2);
+    //shorts.codigo = 2;
+    shorts.descricao = "Shorts";
+    shorts.valor = 57.50;
+    listaProduto.add(shorts);
 
     Produto luvas = new Produto();
-		luvas.codigo = 5;
-		luvas.descricao = "Luvas";
-		luvas.valor = 19.50;
-		
-    listaDeProdutos.add(toca);
+    luvas.criarCodigo(3);
+    //luvas.codigo = 2;
+    luvas.descricao = "Luvas";
+    luvas.valor = 60.00;
+    listaProduto.add(luvas);
 
-   Produto produtoEncontrado = Produto.buscarProdutoPeloId(listaDeProdutos, 2);
-	  System.out.println(produtoEncontrado.descricao);
+    for (int contador = 0; contador < listaProduto.size(); contador++) {
+
+      Produto objetoDaLista = listaProduto.get(contador);
+      if (objetoDaLista.retornaCodigo() == 100) {
+        System.out.println(objetoDaLista.montarResumo());
+      }
+    }
+
+    //Produto objetoDaLista = listaProduto.get(0);
+
+    //System.out.println(objetoDaLista.montarResumo());
+
 	}
 
 }

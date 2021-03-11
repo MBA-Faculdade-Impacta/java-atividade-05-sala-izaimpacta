@@ -63,9 +63,9 @@ public class JavaSpringTemplateApplication {
 
     Produto luvas = new Produto();
     luvas.criarCodigo(3);
-    //luvas.codigo = 2;
+    //luvas.codigo = 3;
     luvas.descricao = "Luvas";
-    luvas.valor = 60.00;
+    luvas.valor = 19.50;
     listaProduto.add(luvas);
 
     for (int contador = 0; contador < listaProduto.size(); contador++) {
